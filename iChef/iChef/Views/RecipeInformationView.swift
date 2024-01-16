@@ -31,13 +31,13 @@ struct RecipeInformationView: View {
                 
             HStack(alignment: .center, spacing: 4) {
                 Text(recipeDetail?.strCategory ?? "")
-                    .font(.system(size: 15))
+                    .font(.system(size: 16))
                     .fontWeight(.bold)
                     .textCase(.uppercase)
                     .foregroundColor(AppTheme.tertiaryColor)
                     .padding(.horizontal)
                     .padding(.vertical, 4)
-                    .background(AppTheme.primaryColor)
+                    .background(AppTheme.secondaryColor)
                     .cornerRadius(30)
 
                 VStack {
@@ -55,28 +55,45 @@ struct RecipeInformationView: View {
             .padding(.horizontal, 16)
             .background(Color.white)
             
-            Divider()
-                .padding([.horizontal, .vertical])
-            
             VStack {
                 HStack {
                     Text("Ingredients")
-                        .foregroundColor(.gray)
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
                     
                     Spacer()
                     
                     Text("Measures")
-                        .foregroundColor(.gray)
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
                 }
-                .padding(.vertical)
-                .padding(.horizontal, 30)
+
+                .background(AppTheme.accentColor)
+                .cornerRadius(30)
+                .padding(.top, 16)
+                .padding(.horizontal, 20)
                 
                 ForEach(ingredients.indices, id: \.self) { index in
                     VStack {
-                        HStack {
+                        HStack(alignment: .center, spacing: 8) {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(AppTheme.primaryColor)
+                                .frame(width: 1, height: 1)
+                                .padding(.trailing, 8)
+                            
                             Text(ingredients[index].lowercased())
                                 .fontWeight(.light)
+                            
                             Spacer()
+                            
                             Text(measures[index].lowercased())
                                 .fontWeight(.bold)
                         }
@@ -92,30 +109,43 @@ struct RecipeInformationView: View {
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Instructions")
-                        .foregroundColor(.gray)
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                        .background(AppTheme.accentColor)
+                        .cornerRadius(30)
                     
-
                     Text(recipeDetail?.strInstructions ?? "")
                         .fontWeight(.light)
-                        .padding(.horizontal, 30)
                         .padding(.vertical)
                 }
+                .padding(.horizontal, 30)
                     
                 if recipeDetail?.strYoutube != nil, recipeDetail?.strYoutube?.isEmpty != true {
-                    VStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Divider()
+                            .padding([.horizontal, .vertical])
+                        
                         Text("Cook it with the video")
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-
+                            .font(.system(size: 16))
+                            .fontWeight(.bold)
+                            .textCase(.uppercase)
+                            .foregroundColor(.white)
+                            .padding(.horizontal)
+                            .padding(.vertical, 4)
+                            .background(AppTheme.accentColor)
+                            .cornerRadius(30)
+                            .padding(.horizontal, 30)
+                        
                         VideoComponentView(videoURL: recipeDetail?.strYoutube ?? "", detailImageURL: recipeDetail?.strMealThumb ?? "")
                             .frame(width: UIScreen.main.bounds.width - 30, height: 120) // Ajuste o tamanho conforme necessário
                             .padding(.horizontal, 16)
                             .padding(.vertical, 16)
                     }
                 }
-                
-                
             }
             .background(Color.white)
         }

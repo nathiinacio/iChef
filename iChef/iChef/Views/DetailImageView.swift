@@ -32,7 +32,7 @@ struct DetailImageView: View {
                             Spacer()
                             
                             Button(action: {}, label: {
-                                Image(systemName: "bookmark.fill")
+                                Image(systemName: "bookmark")
                                     .foregroundColor(AppTheme.accentColor)
                                     .padding()
                                     .background(Color.white)
