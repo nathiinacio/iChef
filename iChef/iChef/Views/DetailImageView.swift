@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct DetailImageView: View {
-    let recipeDetail: RecipeDetail?
+    let detailImageURL: URL?
     @Environment(\.presentationMode) var presentation
 
     var body: some View {
         ZStack {
-            CardImageView(imageURL: URL(string: recipeDetail?.strMealThumb ?? ""))
+            CardImageView(imageURL: detailImageURL)
                 .foregroundColor(.gray)
                 .frame(width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.width)
                 .overlay(
                     VStack {
-                        
                         HStack {
                             Button(action: {
                                 presentation.wrappedValue.dismiss()

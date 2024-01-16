@@ -33,6 +33,7 @@
 		E2B97D352B56DCA2005488BE /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D342B56DCA2005488BE /* CardImageView.swift */; };
 		E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D362B57178E005488BE /* DetailImageView.swift */; };
 		E2B97D392B572FFF005488BE /* RecipeInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D382B572FFF005488BE /* RecipeInformationView.swift */; };
+		E2B97D3B2B573533005488BE /* VideoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D3A2B573533005488BE /* VideoComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		E2B97D342B56DCA2005488BE /* CardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		E2B97D362B57178E005488BE /* DetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageView.swift; sourceTree = "<group>"; };
 		E2B97D382B572FFF005488BE /* RecipeInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationView.swift; sourceTree = "<group>"; };
+		E2B97D3A2B573533005488BE /* VideoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				E2885E922B533383005C1772 /* RecipeDetailView.swift */,
 				E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */,
 				E200D6342B55DECF000D2BA7 /* LogoComponentView.swift */,
+				E2B97D3A2B573533005488BE /* VideoComponentView.swift */,
 				E2B97D382B572FFF005488BE /* RecipeInformationView.swift */,
 				E2B97D362B57178E005488BE /* DetailImageView.swift */,
 				E2B97D342B56DCA2005488BE /* CardImageView.swift */,
@@ -366,6 +369,7 @@
 				E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */,
 				E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */,
 				E2885E932B533383005C1772 /* RecipeDetailView.swift in Sources */,
+				E2B97D3B2B573533005488BE /* VideoComponentView.swift in Sources */,
 				E2885E552B533228005C1772 /* ContentView.swift in Sources */,
 				E2885E532B533228005C1772 /* iChefApp.swift in Sources */,
 				E2885EA02B5458B9005C1772 /* RecipeDetailViewModel.swift in Sources */,

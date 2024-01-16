@@ -34,10 +34,10 @@ struct RecipeInformationView: View {
                     .font(.system(size: 15))
                     .fontWeight(.bold)
                     .textCase(.uppercase)
-                    .foregroundColor(.green)
+                    .foregroundColor(AppTheme.tertiaryColor)
                     .padding(.horizontal)
                     .padding(.vertical, 4)
-                    .background(Color.green.opacity(0.15))
+                    .background(AppTheme.primaryColor)
                     .cornerRadius(30)
 
                 VStack {
@@ -100,6 +100,21 @@ struct RecipeInformationView: View {
                         .padding(.horizontal, 30)
                         .padding(.vertical)
                 }
+                    
+                if recipeDetail?.strYoutube != nil, recipeDetail?.strYoutube?.isEmpty != true {
+                    VStack {
+                        Text("Cook it with the video")
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+
+                        VideoComponentView(videoURL: recipeDetail?.strYoutube ?? "", detailImageURL: recipeDetail?.strMealThumb ?? "")
+                            .frame(width: UIScreen.main.bounds.width - 30, height: 120) // Ajuste o tamanho conforme necessário
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 16)
+                    }
+                }
+                
                 
             }
             .background(Color.white)

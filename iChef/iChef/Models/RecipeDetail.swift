@@ -12,13 +12,14 @@ struct RecipeDetailAPIResponse: Codable {
 }
 
 struct RecipeDetail: Codable {
-    let idMeal: String
+    let idMeal: String?
     let strMeal: String?
     let strDrinkAlternate: String?
-    let strCategory: String
-    let strArea: String
-    let strInstructions: String
-    let strMealThumb: String
+    let strCategory: String?
+    let strArea: String?
+    let strInstructions: String?
+    let strMealThumb: String?
+    let strYoutube: String?
     
     let strIngredient1: String?
     let strIngredient2: String?
