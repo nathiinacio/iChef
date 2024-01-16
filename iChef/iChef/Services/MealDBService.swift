@@ -74,4 +74,33 @@ class MealDBService {
             }
         }.resume()
     }
+    
+    func fetchRecipeDetail(selectedRecipe: String, completion: @escaping (Result<[RecipeDetail], Error>) -> Void) {
+        guard let url = URL(string: "\(baseURL)lookup.php?i=\(selectedRecipe)") else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                debugPrint("Error: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                debugPrint("No data received.")
+                completion(.failure(NetworkError.noData))
+                return
+            }
+
+            do {
+                let result = try JSONDecoder().decode(RecipeDetailAPIResponse.self, from: data)
+                completion(.success(result.meals))
+            } catch {
+                debugPrint("Error decoding data: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }

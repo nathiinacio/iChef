@@ -13,6 +13,19 @@ class RecipeDetailViewModel: ObservableObject {
     
     
     func fetchRecipeDetail(selectedRecipe: String) {
-        //TODO
+        MealDBService().fetchRecipeDetail(selectedRecipe: selectedRecipe) { result in
+            switch result {
+            case .success(let fetchedRecipe):
+                DispatchQueue.main.async {
+                    self.recipe = fetchedRecipe.first
+                    self.isLoading = false
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+                debugPrint("Error fetching recipe: \(error.localizedDescription)")
+            }
+        }
     }
 }
