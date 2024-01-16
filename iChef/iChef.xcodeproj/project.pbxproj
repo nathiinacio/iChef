@@ -29,7 +29,8 @@
 		E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E952B533AF5005C1772 /* AppTheme.swift */; };
 		E2885EA02B5458B9005C1772 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E9F2B5458B9005C1772 /* RecipeDetailViewModel.swift */; };
 		E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885EA12B5458C8005C1772 /* RecipeDetail.swift */; };
-		E2885EA42B54A1A9005C1772 /* IngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885EA32B54A1A9005C1772 /* IngredientCardView.swift */; };
+		E2B97D332B56DC8D005488BE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D322B56DC8D005488BE /* CardView.swift */; };
+		E2B97D352B56DCA2005488BE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D342B56DCA2005488BE /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +75,8 @@
 		E2885E952B533AF5005C1772 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		E2885E9F2B5458B9005C1772 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		E2885EA12B5458C8005C1772 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
-		E2885EA32B54A1A9005C1772 /* IngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCardView.swift; sourceTree = "<group>"; };
+		E2B97D322B56DC8D005488BE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E2B97D342B56DCA2005488BE /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +193,9 @@
 				E2885E902B533375005C1772 /* RecipesListView.swift */,
 				E2885E922B533383005C1772 /* RecipeDetailView.swift */,
 				E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */,
-				E2885EA32B54A1A9005C1772 /* IngredientCardView.swift */,
 				E200D6342B55DECF000D2BA7 /* LogoComponentView.swift */,
+				E2B97D342B56DCA2005488BE /* CustomImageView.swift */,
+				E2B97D322B56DC8D005488BE /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,13 +354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2885E862B53330C005C1772 /* Ingredient.swift in Sources */,
+				E2B97D352B56DCA2005488BE /* CustomImageView.swift in Sources */,
 				E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */,
 				E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */,
 				E2885E932B533383005C1772 /* RecipeDetailView.swift in Sources */,
 				E2885E552B533228005C1772 /* ContentView.swift in Sources */,
 				E2885E532B533228005C1772 /* iChefApp.swift in Sources */,
 				E2885EA02B5458B9005C1772 /* RecipeDetailViewModel.swift in Sources */,
-				E2885EA42B54A1A9005C1772 /* IngredientCardView.swift in Sources */,
 				E200D6392B55FEDB000D2BA7 /* AppIcons.swift in Sources */,
 				E200D6372B55DEDE000D2BA7 /* RecipeSearchView.swift in Sources */,
 				E2885E8D2B53335C005C1772 /* RecipeViewModel.swift in Sources */,
@@ -366,6 +369,7 @@
 				E2885E8B2B53333F005C1772 /* IngredientViewModel.swift in Sources */,
 				E2885E842B5332E9005C1772 /* MealDBService.swift in Sources */,
 				E2885E882B533318005C1772 /* Recipe.swift in Sources */,
+				E2B97D332B56DC8D005488BE /* CardView.swift in Sources */,
 				E2885E8F2B53336C005C1772 /* IngredientsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

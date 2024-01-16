@@ -9,7 +9,8 @@ import Foundation
 
 class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
-    
+    @Published var isLoading: Bool = true
+
     init(selectedIngredient: String) {
         fetchRecipes(selectedIngredient: selectedIngredient)
     }
@@ -21,9 +22,13 @@ class RecipeViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     for recipe in fetchedRecipes {
                         self.recipes.append(recipe)
+                        self.isLoading = false
                     }
                 }
             case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
                 debugPrint("Error fetching recipes: \(error.localizedDescription)")
             }
         }

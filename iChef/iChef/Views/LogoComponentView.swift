@@ -16,7 +16,6 @@ struct LogoComponentView: View {
                 .fill(AppTheme.primaryColor)
                 .frame(height: 150)
                 .offset(y: -210)
-                .ignoresSafeArea()
                        
             VStack(alignment: .center, spacing: 60) {
                 AppIcons.logo
@@ -34,7 +33,6 @@ struct LogoComponentView: View {
                 }
             }
        }
-        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

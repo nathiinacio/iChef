@@ -13,21 +13,26 @@ struct ContentView: View {
     @Namespace private var animation
     
     var body: some View {
-        VStack {
-            TabView(selection: $activeTab, content: {
-                IngredientsListView()
-                      .tag(TabBar.recipes)
-                RecipesListView(recipeViewModel: RecipeViewModel(selectedIngredient: "salmon"))
-                    .tag(TabBar.meals)
-                Text("Favorites")
-                    .tag(TabBar.favorites)
-            })
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            CustomizeTabBar()
+        NavigationView{
+            VStack {
+                TabView(selection: $activeTab, content: {
+                    IngredientsListView()
+                          .tag(TabBar.recipes)
+                    RecipesListView(recipeViewModel: RecipeViewModel(selectedIngredient: "salmon"))
+                        .tag(TabBar.meals)
+                    Text("Favorites")
+                        .tag(TabBar.favorites)
+                })
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                CustomizeTabBar()
+            }
+            .padding(.vertical, 8)
+            .ignoresSafeArea(.all, edges: .all)
         }
-        .padding(.vertical, 8)
-        .ignoresSafeArea(.all, edges: .all)
+        .navigationViewStyle(DefaultNavigationViewStyle())
     }
+    
+    
     
     @ViewBuilder
     func CustomizeTabBar(_ tint: Color = AppTheme.accentColor, _ inactiveTint: Color = .gray) -> some View {

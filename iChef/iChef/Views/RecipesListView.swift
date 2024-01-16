@@ -8,22 +8,45 @@
 import SwiftUI
 
 struct RecipesListView: View {
+    
     @ObservedObject var recipeViewModel: RecipeViewModel
-
+    
     var body: some View {
-        List(recipeViewModel.recipes, id: \.idMeal) { recipe in
-            Text(recipe.strMeal)
+        VStack(alignment: .center, spacing: 20) {
+            ScrollView(.vertical, showsIndicators: true) {
+                if recipeViewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: AppTheme.primaryColor))
+                        .scaleEffect(1.5)
+                        .padding(.top, 50)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                } else {
+                    Text("Select your favorite recipe")
+                        .font(.system(size: 18, weight: .light))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 16)
+                    Divider()
+                        .padding(.vertical, 8)
+                    VStack {
+                        ForEach(recipeViewModel.recipes, id: \.idMeal) { recipe in
+                            NavigationLink(
+                                destination: RecipeDetailView(recipeTitle: recipe.strMeal),
+                                label: {
+                                    CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb))
+                                })
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .navigationBarHidden(false)
+            .navigationBarTitle("Recipes", displayMode: .inline)
         }
-        .navigationTitle("Recipes")
     }
 }
 
 struct RecipesListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = RecipeViewModel(selectedIngredient: "salmon")
-        return NavigationView {
-            RecipesListView(recipeViewModel: viewModel)
-        }
+        RecipesListView(recipeViewModel: RecipeViewModel(selectedIngredient: "salmon"))
     }
 }
-

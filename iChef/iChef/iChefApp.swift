@@ -12,7 +12,6 @@ struct iChefApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .ignoresSafeArea()
         }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct IngredientsListView: View {
     @ObservedObject private var ingredientViewModel = IngredientViewModel()
-    @State private var goToNewView: Bool = false
     @State private var selectedIngredient: String?
 
     var body: some View {
@@ -35,7 +34,7 @@ struct IngredientsListView: View {
                                 NavigationLink(
                                     destination: RecipesListView(recipeViewModel: RecipeViewModel(selectedIngredient: ingredient.strIngredient)),
                                     label: {
-                                        IngredientCardView(ingredient: ingredient)
+                                        CardView(title: ingredient.strIngredient, recipeImageURL: nil)
                                     })
                             }
                         }
@@ -43,6 +42,7 @@ struct IngredientsListView: View {
                 }
             }
             .padding(.horizontal)
+            .navigationBarHidden(true)
             .ignoresSafeArea(.all, edges: .all)
         }
         .navigationViewStyle(StackNavigationViewStyle())
