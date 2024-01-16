@@ -1,42 +1,29 @@
 //
-//  IngredientCardView.swift
+//  CardView.swift
 //  iChef
 //
 //  Created by Nathalia Inacio on 14/01/24.
 //
 
 import SwiftUI
-import Kingfisher
 
-struct IngredientImageView: View {
-    let imageURL: URL?
-
-    var body: some View {
-        KFImage(imageURL)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 60, height: 60)
-            .clipShape(Rectangle())
-            .shadow(radius: 3)
-    }
-}
-
-struct IngredientCardView: View {
+struct CardView: View {
     
-    var ingredient: Ingredient
-    
-    var imageURL: URL? {
-         let urlString = "https://www.themealdb.com/images/ingredients/\(ingredient.strIngredient.withSpacesEncoded()).png"
+    var title: String?
+    var recipeImageURL: URL?
+    var ingredientImageURL: URL? {
+        let urlString = "https://www.themealdb.com/images/ingredients/\(title?.withSpacesEncoded() ?? "").png"
          return URL(string: urlString)
      }
     
     var body: some View {
         HStack(spacing: 16) {
-            IngredientImageView(imageURL: imageURL)
+            CustomImageView(imageURL: recipeImageURL == nil ? ingredientImageURL : recipeImageURL)
+                .foregroundColor(recipeImageURL == nil ? .clear : .gray)
+                .frame(width: recipeImageURL == nil ? 60 : 100, height: recipeImageURL == nil ? 60 : 100)
                 .padding(.leading, 16)
-                .redacted(reason: imageURL == nil ? .placeholder : .init())
 
-            Text(ingredient.strIngredient)
+            Text(title ?? "")
                 .font(.system(size: 18, weight: .regular))
                 .foregroundColor(Color.black)
                 .padding(.trailing, 48)
