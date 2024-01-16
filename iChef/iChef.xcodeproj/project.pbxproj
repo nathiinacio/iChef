@@ -30,7 +30,9 @@
 		E2885EA02B5458B9005C1772 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E9F2B5458B9005C1772 /* RecipeDetailViewModel.swift */; };
 		E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885EA12B5458C8005C1772 /* RecipeDetail.swift */; };
 		E2B97D332B56DC8D005488BE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D322B56DC8D005488BE /* CardView.swift */; };
-		E2B97D352B56DCA2005488BE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D342B56DCA2005488BE /* CustomImageView.swift */; };
+		E2B97D352B56DCA2005488BE /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D342B56DCA2005488BE /* CardImageView.swift */; };
+		E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D362B57178E005488BE /* DetailImageView.swift */; };
+		E2B97D392B572FFF005488BE /* RecipeInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B97D382B572FFF005488BE /* RecipeInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,9 @@
 		E2885E9F2B5458B9005C1772 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		E2885EA12B5458C8005C1772 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		E2B97D322B56DC8D005488BE /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E2B97D342B56DCA2005488BE /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		E2B97D342B56DCA2005488BE /* CardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
+		E2B97D362B57178E005488BE /* DetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageView.swift; sourceTree = "<group>"; };
+		E2B97D382B572FFF005488BE /* RecipeInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +198,9 @@
 				E2885E922B533383005C1772 /* RecipeDetailView.swift */,
 				E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */,
 				E200D6342B55DECF000D2BA7 /* LogoComponentView.swift */,
-				E2B97D342B56DCA2005488BE /* CustomImageView.swift */,
+				E2B97D382B572FFF005488BE /* RecipeInformationView.swift */,
+				E2B97D362B57178E005488BE /* DetailImageView.swift */,
+				E2B97D342B56DCA2005488BE /* CardImageView.swift */,
 				E2B97D322B56DC8D005488BE /* CardView.swift */,
 			);
 			path = Views;
@@ -354,8 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2885E862B53330C005C1772 /* Ingredient.swift in Sources */,
-				E2B97D352B56DCA2005488BE /* CustomImageView.swift in Sources */,
+				E2B97D352B56DCA2005488BE /* CardImageView.swift in Sources */,
 				E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */,
+				E2B97D392B572FFF005488BE /* RecipeInformationView.swift in Sources */,
+				E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */,
 				E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */,
 				E2885E932B533383005C1772 /* RecipeDetailView.swift in Sources */,
 				E2885E552B533228005C1772 /* ContentView.swift in Sources */,

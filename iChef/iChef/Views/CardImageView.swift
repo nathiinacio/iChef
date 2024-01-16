@@ -1,5 +1,5 @@
 //
-//  CustomImageView.swift
+//  CardImageView.swift
 //  iChef
 //
 //  Created by Nathalia Inacio on 16/01/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct CustomImageView: View {
+struct CardImageView: View {
     let imageURL: URL?
 
     var body: some View {

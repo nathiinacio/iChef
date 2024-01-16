@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class RecipeDetailViewModel: ObservableObject {
+    @Published var recipe: RecipeDetail?
+    @Published var isLoading: Bool = true
+    
+    
+    func fetchRecipeDetail(selectedRecipe: String) {
+        //TODO
+    }
+}

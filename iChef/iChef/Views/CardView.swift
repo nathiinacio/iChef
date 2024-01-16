@@ -18,7 +18,7 @@ struct CardView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            CustomImageView(imageURL: recipeImageURL == nil ? ingredientImageURL : recipeImageURL)
+            CardImageView(imageURL: recipeImageURL == nil ? ingredientImageURL : recipeImageURL)
                 .foregroundColor(recipeImageURL == nil ? .clear : .blue)
                 .frame(width: recipeImageURL == nil ? 60 : 70, height: recipeImageURL == nil ? 60 : 70)
                 .padding(.leading, recipeImageURL == nil ? 16 : 0)

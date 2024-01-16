@@ -18,7 +18,7 @@ struct ContentView: View {
                 TabView(selection: $activeTab, content: {
                     IngredientsListView()
                           .tag(TabBar.recipes)
-                    RecipesListView(recipeViewModel: RecipeViewModel(selectedIngredient: "salmon"))
+                    Text("Meals")
                         .tag(TabBar.meals)
                     Text("Favorites")
                         .tag(TabBar.favorites)
