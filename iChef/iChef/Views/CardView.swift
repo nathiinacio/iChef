@@ -19,14 +19,21 @@ struct CardView: View {
     var body: some View {
         HStack(spacing: 16) {
             CustomImageView(imageURL: recipeImageURL == nil ? ingredientImageURL : recipeImageURL)
-                .foregroundColor(recipeImageURL == nil ? .clear : .gray)
-                .frame(width: recipeImageURL == nil ? 60 : 100, height: recipeImageURL == nil ? 60 : 100)
-                .padding(.leading, 16)
-
+                .foregroundColor(recipeImageURL == nil ? .clear : .blue)
+                .frame(width: recipeImageURL == nil ? 60 : 70, height: recipeImageURL == nil ? 60 : 70)
+                .padding(.leading, recipeImageURL == nil ? 16 : 0)
+                .clipShape(RoundedCorners(radius: 10, corners: [.topLeft, .bottomLeft]))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 0)
+                        .stroke(recipeImageURL == nil ? .clear : AppTheme.primaryColor, lineWidth: 1)
+                       .clipShape(RoundedCorners(radius: 10, corners: [.topLeft, .bottomLeft]))
+                )
+            
             Text(title ?? "")
-                .font(.system(size: 18, weight: .regular))
+                .font(.system(size: recipeImageURL == nil ? 18 : 14, weight: .regular))
                 .foregroundColor(Color.black)
                 .padding(.trailing, 48)
+                .lineLimit(1)
             
             Spacer()
             
@@ -44,6 +51,20 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(AppTheme.primaryColor, lineWidth: 1)
         )
+    }
+}
+
+struct RoundedCorners: Shape {
+    var radius: CGFloat
+    var corners: UIRectCorner
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        return Path(path.cgPath)
     }
 }
 

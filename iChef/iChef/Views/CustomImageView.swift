@@ -15,7 +15,7 @@ struct CustomImageView: View {
         KFImage(imageURL)
             .resizable()
             .scaledToFit()
-            .frame(width: 60, height: 60)
+            .aspectRatio(contentMode: .fill)
             .clipShape(Rectangle())
             .shadow(radius: 3)
             .redacted(reason: imageURL == nil ? .placeholder : .init())
