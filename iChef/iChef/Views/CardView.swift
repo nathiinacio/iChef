@@ -30,7 +30,7 @@ struct CardView: View {
                 )
             
             Text(title ?? "")
-                .font(.system(size: recipeImageURL == nil ? 18 : 14, weight: .regular))
+                .font(.system(size: recipeImageURL == nil ? 16 : 14, weight: .regular))
                 .foregroundColor(Color.black)
                 .padding(.trailing, 48)
                 .lineLimit(1)

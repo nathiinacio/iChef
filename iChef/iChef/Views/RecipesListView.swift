@@ -16,11 +16,11 @@ struct RecipesListView: View {
             ScrollView(.vertical, showsIndicators: true) {
                 if recipeViewModel.isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: AppTheme.primaryColor))
+                        .progressViewStyle(CircularProgressViewStyle(tint: AppTheme.accentColor))
                         .scaleEffect(1.5)
                         .padding(.top, 50)
                         .frame(maxWidth: .infinity, alignment: .center)
-                } else {
+                } else if !recipeViewModel.hadError {
                     Text("Select your favorite recipe")
                         .font(.system(size: 18, weight: .light))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -36,6 +36,11 @@ struct RecipesListView: View {
                                 })
                         }
                     }
+                } else {
+                    Text("Oops, sorry! Unfortunely, we don't have any recipes with this main ingredient...")
+                        .font(.system(size: 18, weight: .light))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.top, 16)
                 }
             }
             .padding(.horizontal)

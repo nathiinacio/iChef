@@ -27,7 +27,7 @@ struct ContentView: View {
                 CustomizeTabBar()
             }
             .padding(.vertical, 8)
-            .ignoresSafeArea(.all, edges: .all)
+            .ignoresSafeArea()
         }
         .navigationViewStyle(DefaultNavigationViewStyle())
     }

@@ -15,12 +15,13 @@ struct LogoComponentView: View {
             SemiCircleShape()
                 .fill(AppTheme.primaryColor)
                 .frame(height: 150)
-                .offset(y: -210)
-                       
+                .offset(y: -250)
+                .ignoresSafeArea()
+
             VStack(alignment: .center, spacing: 60) {
                 AppIcons.logo
                     .frame(width: 20, height: 20, alignment: .center)
-                    .padding(.top, 120)
+                    .padding(.top, 70)
                     
                 HStack(spacing: 0) {
                     Text("i")
