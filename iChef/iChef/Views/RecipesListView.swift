@@ -32,7 +32,7 @@ struct RecipesListView: View {
                             NavigationLink(
                                 destination: RecipeDetailView(recipeiD: recipe.idMeal),
                                 label: {
-                                    CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb))
+                                    CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb ?? ""))
                                 })
                         }
                     }

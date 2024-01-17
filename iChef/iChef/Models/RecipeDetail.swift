@@ -12,8 +12,8 @@ struct RecipeDetailAPIResponse: Codable {
 }
 
 struct RecipeDetail: Codable {
-    let idMeal: String?
-    let strMeal: String?
+    let idMeal: String
+    let strMeal: String
     let strDrinkAlternate: String?
     let strCategory: String?
     let strArea: String?

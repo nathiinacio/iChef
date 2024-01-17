@@ -18,8 +18,8 @@ struct ContentView: View {
                 TabView(selection: $activeTab, content: {
                     IngredientsListView()
                           .tag(TabBar.recipes)
-                    Text("Meals")
-                        .tag(TabBar.meals)
+                    SearchView()
+                        .tag(TabBar.explore)
                     FavoritesView()
                         .tag(TabBar.favorites)
                 })
@@ -56,15 +56,15 @@ struct ContentView: View {
 
 public enum TabBar: String, CaseIterable {
     case recipes = "Recipes"
-    case meals = "Meals"
+    case explore = "Explore"
     case favorites = "Favorites"
     
     var tabIcon:String {
         switch self {
         case .recipes:
             return "book"
-        case .meals:
-            return "calendar"
+        case .explore:
+            return "magnifyingglass"
         case .favorites:
             return "bookmark"
         }
