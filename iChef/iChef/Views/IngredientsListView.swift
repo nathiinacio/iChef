@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct IngredientsListView: View {
-    @ObservedObject private var ingredientViewModel = IngredientViewModel()
-    @State private var selectedIngredient: String?
+    @ObservedObject var ingredientViewModel = IngredientViewModel()
+    @State var selectedIngredient: String?
 
     var body: some View {
         VStack(alignment: .center, spacing: 20) {

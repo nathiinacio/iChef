@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     var recipeiD: String
-    @ObservedObject private var recipeDetailViewModel = RecipeDetailViewModel()
+    @ObservedObject var recipeDetailViewModel = RecipeDetailViewModel()
 
     var body: some View {
         VStack {
