@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RecipeDetailView: View {
-    var recipeiD: String
+    var recipeID: String
     @ObservedObject private var recipeDetailViewModel = RecipeDetailViewModel()
 
     var body: some View {
@@ -36,13 +36,13 @@ struct RecipeDetailView: View {
         .navigationBarHidden(true)
         .ignoresSafeArea(.all, edges: .all)
         .onAppear{
-            recipeDetailViewModel.fetchRecipeDetail(selectedRecipe: recipeiD)
+            recipeDetailViewModel.fetchRecipeDetail(selectedRecipe: recipeID)
         }
     }
 }
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipeiD: "Apple Frangipan Tart")
+        RecipeDetailView(recipeID: "Apple Frangipan Tart")
     }
 }

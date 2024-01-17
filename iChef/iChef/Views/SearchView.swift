@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SearchView: View {
     @State private var searchText = ""
     @State private var isSearching = false
@@ -29,48 +28,72 @@ struct SearchView: View {
             }
 
             HStack {
-                TextField("Search for recipes", text: $searchText, onEditingChanged: { isEditing in
-                    isSearching = true
+                TextField("Type the name of the recipe...", text: $searchText, onEditingChanged: { isEditing in
+                    isSearching = false
                 }, onCommit: {
+                    searchViewModel.recipes = []
                     searchViewModel.searchRecipe(recipe: searchText)
+                    searchViewModel.isLoading = true
+                    isSearching = true
                 })
                 .padding(8)
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
-                
+
                 Button(action: {
-                    isSearching = false
-                    if !searchText.isEmpty{
+                    if !searchText.isEmpty {
+                        searchViewModel.recipes = []
                         searchViewModel.searchRecipe(recipe: searchText)
+                        searchViewModel.isLoading = true
+                        isSearching = true
                     }
                 }, label: {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(Color.white)
                         .padding()
-                        .background(Color.blue)
+                        .background(AppTheme.accentColor)
                         .clipShape(Circle())
                 })
             }
-            
 
-            if !searchText.isEmpty && !isSearching {
-                Text("Search results for '\(searchText)':")
-                    .font(.system(size: 18, weight: .light))
-                    .padding(.vertical, 8)
+            if isSearching {
+                showResults()
+            }
 
+            Spacer()
+        }
+        .onDisappear{
+            isSearching = false
+        }
+        .padding(.horizontal, 16)
+        .navigationBarHidden(true)
+    }
+
+    @ViewBuilder
+    func showResults() -> some View {
+        if !searchViewModel.recipes.isEmpty {
+            ScrollView(.vertical, showsIndicators: true) {
                 ForEach(searchViewModel.recipes, id: \.idMeal) { recipe in
                     NavigationLink(
-                        destination: RecipeDetailView(recipeiD: recipe.idMeal),
+                        destination: RecipeDetailView(recipeID: recipe.idMeal),
                         label: {
                             CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb ?? ""))
                         })
                 }
             }
-
-            Divider()
-                .padding(.bottom, 8)
+        } else {
+            if searchViewModel.isLoading == false {
+                Text("No results.")
+                    .padding()
+                    .foregroundColor(.gray)
+            } else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: AppTheme.accentColor))
+                    .scaleEffect(1.5)
+                    .padding(.top, 50)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
         }
-        .padding(.horizontal, 16)
-        .navigationBarHidden(true)
     }
 }
+

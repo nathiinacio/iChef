@@ -30,7 +30,7 @@ struct RecipesListView: View {
                     VStack {
                         ForEach(recipeViewModel.recipes, id: \.idMeal) { recipe in
                             NavigationLink(
-                                destination: RecipeDetailView(recipeiD: recipe.idMeal),
+                                destination: RecipeDetailView(recipeID: recipe.idMeal),
                                 label: {
                                     CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb ?? ""))
                                 })
