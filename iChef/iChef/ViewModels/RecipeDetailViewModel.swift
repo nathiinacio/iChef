@@ -13,7 +13,7 @@ class RecipeDetailViewModel: ObservableObject {
     
     
     func fetchRecipeDetail(selectedRecipe: String) {
-        MealDBService().fetchRecipeDetail(selectedRecipe: selectedRecipe) { result in
+        MealDBManager().fetchRecipeDetail(selectedRecipe: selectedRecipe) { result in
             switch result {
             case .success(let fetchedRecipe):
                 DispatchQueue.main.async {

@@ -1,5 +1,5 @@
 //
-//  MealDBService.swift
+//  MealDBManager.swift
 //  iChef
 //
 //  Created by Nathalia Inacio on 13/01/24.
@@ -12,8 +12,8 @@ enum NetworkError: Error {
     case noData
 }
 
-class MealDBService {
-    static let shared = MealDBService()
+class MealDBManager {
+    static let shared = MealDBManager()
     private let baseURL = "https://www.themealdb.com/api/json/v1/1/"
 
     func fetchIngredients(completion: @escaping (Result<[Ingredient], Error>) -> Void) {

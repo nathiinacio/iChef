@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E200D6302B559CBE000D2BA7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E200D62F2B559CBE000D2BA7 /* Kingfisher */; };
 		E200D6352B55DECF000D2BA7 /* LogoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200D6342B55DECF000D2BA7 /* LogoComponentView.swift */; };
 		E200D6372B55DEDE000D2BA7 /* RecipeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */; };
 		E200D6392B55FEDB000D2BA7 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200D6382B55FEDB000D2BA7 /* AppIcons.swift */; };
+		E2517D0C2B576A240077B732 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517D0B2B576A240077B732 /* FavoritesManager.swift */; };
+		E2517D0F2B576EAB0077B732 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E2517D0E2B576EAB0077B732 /* Kingfisher */; };
 		E2885E532B533228005C1772 /* iChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E522B533228005C1772 /* iChefApp.swift */; };
 		E2885E552B533228005C1772 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E542B533228005C1772 /* ContentView.swift */; };
 		E2885E572B53322C005C1772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2885E562B53322C005C1772 /* Assets.xcassets */; };
@@ -18,7 +19,7 @@
 		E2885E642B53322D005C1772 /* iChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E632B53322D005C1772 /* iChefTests.swift */; };
 		E2885E6E2B53322D005C1772 /* iChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E6D2B53322D005C1772 /* iChefUITests.swift */; };
 		E2885E702B53322D005C1772 /* iChefUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E6F2B53322D005C1772 /* iChefUITestsLaunchTests.swift */; };
-		E2885E842B5332E9005C1772 /* MealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E832B5332E9005C1772 /* MealDBService.swift */; };
+		E2885E842B5332E9005C1772 /* MealDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E832B5332E9005C1772 /* MealDBManager.swift */; };
 		E2885E862B53330C005C1772 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E852B53330C005C1772 /* Ingredient.swift */; };
 		E2885E882B533318005C1772 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E872B533318005C1772 /* Recipe.swift */; };
 		E2885E8B2B53333F005C1772 /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E8A2B53333F005C1772 /* IngredientViewModel.swift */; };
@@ -57,6 +58,7 @@
 		E200D6342B55DECF000D2BA7 /* LogoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoComponentView.swift; sourceTree = "<group>"; };
 		E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchView.swift; sourceTree = "<group>"; };
 		E200D6382B55FEDB000D2BA7 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
+		E2517D0B2B576A240077B732 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		E2885E4F2B533228005C1772 /* iChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2885E522B533228005C1772 /* iChefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChefApp.swift; sourceTree = "<group>"; };
 		E2885E542B533228005C1772 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		E2885E692B53322D005C1772 /* iChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2885E6D2B53322D005C1772 /* iChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChefUITests.swift; sourceTree = "<group>"; };
 		E2885E6F2B53322D005C1772 /* iChefUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChefUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E2885E832B5332E9005C1772 /* MealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBService.swift; sourceTree = "<group>"; };
+		E2885E832B5332E9005C1772 /* MealDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBManager.swift; sourceTree = "<group>"; };
 		E2885E852B53330C005C1772 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		E2885E872B533318005C1772 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		E2885E8A2B53333F005C1772 /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E200D6302B559CBE000D2BA7 /* Kingfisher in Frameworks */,
+				E2517D0F2B576EAB0077B732 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +141,7 @@
 				E2885E7D2B53325C005C1772 /* Models */,
 				E2885E7E2B533277005C1772 /* ViewModels */,
 				E2885E802B5332B3005C1772 /* Views */,
-				E2885E822B5332C3005C1772 /* Services */,
+				E2885E822B5332C3005C1772 /* Managers */,
 				E2885E942B533AE3005C1772 /* Utilities */,
 				E2885E562B53322C005C1772 /* Assets.xcassets */,
 				E2885E582B53322C005C1772 /* Preview Content */,
@@ -209,12 +211,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E2885E822B5332C3005C1772 /* Services */ = {
+		E2885E822B5332C3005C1772 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E2885E832B5332E9005C1772 /* MealDBService.swift */,
+				E2885E832B5332E9005C1772 /* MealDBManager.swift */,
+				E2517D0B2B576A240077B732 /* FavoritesManager.swift */,
 			);
-			path = Services;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		E2885E942B533AE3005C1772 /* Utilities */ = {
@@ -243,7 +246,7 @@
 			);
 			name = iChef;
 			packageProductDependencies = (
-				E200D62F2B559CBE000D2BA7 /* Kingfisher */,
+				E2517D0E2B576EAB0077B732 /* Kingfisher */,
 			);
 			productName = iChef;
 			productReference = E2885E4F2B533228005C1772 /* iChef.app */;
@@ -318,7 +321,7 @@
 			);
 			mainGroup = E2885E462B533228005C1772;
 			packageReferences = (
-				E200D62E2B559CBE000D2BA7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E2517D0D2B576EAB0077B732 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E2885E502B533228005C1772 /* Products */;
 			projectDirPath = "";
@@ -367,6 +370,7 @@
 				E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */,
 				E2B97D392B572FFF005488BE /* RecipeInformationView.swift in Sources */,
 				E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */,
+				E2517D0C2B576A240077B732 /* FavoritesManager.swift in Sources */,
 				E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */,
 				E2885E932B533383005C1772 /* RecipeDetailView.swift in Sources */,
 				E2B97D3B2B573533005488BE /* VideoComponentView.swift in Sources */,
@@ -379,7 +383,7 @@
 				E2885E912B533375005C1772 /* RecipesListView.swift in Sources */,
 				E200D6352B55DECF000D2BA7 /* LogoComponentView.swift in Sources */,
 				E2885E8B2B53333F005C1772 /* IngredientViewModel.swift in Sources */,
-				E2885E842B5332E9005C1772 /* MealDBService.swift in Sources */,
+				E2885E842B5332E9005C1772 /* MealDBManager.swift in Sources */,
 				E2885E882B533318005C1772 /* Recipe.swift in Sources */,
 				E2B97D332B56DC8D005488BE /* CardView.swift in Sources */,
 				E2885E8F2B53336C005C1772 /* IngredientsListView.swift in Sources */,
@@ -711,20 +715,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E200D62E2B559CBE000D2BA7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		E2517D0D2B576EAB0077B732 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E200D62F2B559CBE000D2BA7 /* Kingfisher */ = {
+		E2517D0E2B576EAB0077B732 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E200D62E2B559CBE000D2BA7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = E2517D0D2B576EAB0077B732 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

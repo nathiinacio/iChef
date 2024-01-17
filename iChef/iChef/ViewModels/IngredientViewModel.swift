@@ -17,7 +17,7 @@ class IngredientViewModel: ObservableObject {
     }
     
     func fetchIngredients() {
-        MealDBService().fetchIngredients { result in
+        MealDBManager().fetchIngredients { result in
             switch result {
             case .success(let fetchedIngredients):
                 DispatchQueue.main.async {

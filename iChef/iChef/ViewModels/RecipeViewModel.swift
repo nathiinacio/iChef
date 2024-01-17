@@ -18,7 +18,7 @@ class RecipeViewModel: ObservableObject {
     }
     
     func fetchRecipes(selectedIngredient: String?) {
-        MealDBService().fetchRecipes(selectedIngredient: selectedIngredient ?? "salmon") { result in
+        MealDBManager().fetchRecipes(selectedIngredient: selectedIngredient ?? "salmon") { result in
             switch result {
             case .success(let fetchedRecipes):
                 DispatchQueue.main.async {

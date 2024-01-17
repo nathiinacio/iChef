@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DetailImageView: View {
+    let recipeID: String
     let detailImageURL: URL?
     @Environment(\.presentationMode) var presentation
+    @State private var isFavorite: Bool = false
 
     var body: some View {
         ZStack {
@@ -31,13 +33,19 @@ struct DetailImageView: View {
                             
                             Spacer()
                             
-                            Button(action: {}, label: {
-                                Image(systemName: "bookmark")
+                            Button(action: {
+                                FavoritesManager.shared.toggleFavorite(recipeID)
+                                isFavorite.toggle()
+                            }, label: {
+                                Image(systemName: isFavorite ? "bookmark.fill" : "bookmark")
                                     .foregroundColor(AppTheme.accentColor)
                                     .padding()
                                     .background(Color.white)
                                     .clipShape(Circle())
                             })
+                            .onAppear {
+                                isFavorite = FavoritesManager.shared.isFavorite(recipeID)
+                            }
                         }
                         .padding(.horizontal, 16)
                         .padding(.top, 80)
