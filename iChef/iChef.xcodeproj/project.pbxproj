@@ -319,6 +319,7 @@
 			mainGroup = E2885E462B533228005C1772;
 			packageReferences = (
 				E200D62E2B559CBE000D2BA7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				1A0652A52B574F3800D61C60 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = E2885E502B533228005C1772 /* Products */;
 			projectDirPath = "";
@@ -711,6 +712,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1A0652A52B574F3800D61C60 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E200D62E2B559CBE000D2BA7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
