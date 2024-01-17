@@ -15,7 +15,7 @@ struct DetailImageView: View {
 
     var body: some View {
         ZStack {
-            CardImageView(imageURL: URL(string: recipe.strMealThumb))
+            CardImageView(imageURL: URL(string: recipe.strMealThumb ?? ""))
                 .foregroundColor(.gray)
                 .frame(width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.width)
                 .overlay(

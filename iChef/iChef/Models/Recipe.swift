@@ -13,6 +13,6 @@ struct RecipeAPIResponse: Codable {
 
 struct Recipe: Codable, Hashable {
     let strMeal: String
-    let strMealThumb: String
+    let strMealThumb: String?
     let idMeal: String
 }

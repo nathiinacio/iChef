@@ -43,9 +43,9 @@ struct FavoritesView: View {
                         
                         ForEach(viewModel.favorites, id: \.self) { recipe in
                             NavigationLink(
-                                destination: RecipeDetailView(recipeiD: recipe.idMeal),
+                                destination: RecipeDetailView(recipeID: recipe.idMeal),
                                 label: {
-                                    CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb))
+                                    CardView(title: recipe.strMeal, recipeImageURL: URL(string: recipe.strMealThumb ?? ""))
                             })
                         }
                     }
