@@ -20,7 +20,7 @@ struct ContentView: View {
                           .tag(TabBar.recipes)
                     Text("Meals")
                         .tag(TabBar.meals)
-                    Text("Favorites")
+                    FavoritesView()
                         .tag(TabBar.favorites)
                 })
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

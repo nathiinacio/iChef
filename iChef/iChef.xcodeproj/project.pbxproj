@@ -12,6 +12,8 @@
 		E200D6392B55FEDB000D2BA7 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200D6382B55FEDB000D2BA7 /* AppIcons.swift */; };
 		E2517D0C2B576A240077B732 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517D0B2B576A240077B732 /* FavoritesManager.swift */; };
 		E2517D0F2B576EAB0077B732 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E2517D0E2B576EAB0077B732 /* Kingfisher */; };
+		E2517D112B5770280077B732 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517D102B5770280077B732 /* FavoritesView.swift */; };
+		E2517D132B58111F0077B732 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517D122B58111F0077B732 /* FavoritesViewModel.swift */; };
 		E2885E532B533228005C1772 /* iChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E522B533228005C1772 /* iChefApp.swift */; };
 		E2885E552B533228005C1772 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2885E542B533228005C1772 /* ContentView.swift */; };
 		E2885E572B53322C005C1772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2885E562B53322C005C1772 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		E200D6362B55DEDE000D2BA7 /* RecipeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchView.swift; sourceTree = "<group>"; };
 		E200D6382B55FEDB000D2BA7 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
 		E2517D0B2B576A240077B732 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		E2517D102B5770280077B732 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		E2517D122B58111F0077B732 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		E2885E4F2B533228005C1772 /* iChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2885E522B533228005C1772 /* iChefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChefApp.swift; sourceTree = "<group>"; };
 		E2885E542B533228005C1772 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				E2885E8A2B53333F005C1772 /* IngredientViewModel.swift */,
 				E2885E9F2B5458B9005C1772 /* RecipeDetailViewModel.swift */,
 				E2885E8C2B53335C005C1772 /* RecipeViewModel.swift */,
+				E2517D122B58111F0077B732 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				E2B97D382B572FFF005488BE /* RecipeInformationView.swift */,
 				E2B97D362B57178E005488BE /* DetailImageView.swift */,
 				E2B97D342B56DCA2005488BE /* CardImageView.swift */,
+				E2517D102B5770280077B732 /* FavoritesView.swift */,
 				E2B97D322B56DC8D005488BE /* CardView.swift */,
 			);
 			path = Views;
@@ -369,6 +375,7 @@
 				E2B97D352B56DCA2005488BE /* CardImageView.swift in Sources */,
 				E2885EA22B5458C8005C1772 /* RecipeDetail.swift in Sources */,
 				E2B97D392B572FFF005488BE /* RecipeInformationView.swift in Sources */,
+				E2517D112B5770280077B732 /* FavoritesView.swift in Sources */,
 				E2B97D372B57178E005488BE /* DetailImageView.swift in Sources */,
 				E2517D0C2B576A240077B732 /* FavoritesManager.swift in Sources */,
 				E2885E962B533AF5005C1772 /* AppTheme.swift in Sources */,
@@ -382,6 +389,7 @@
 				E2885E8D2B53335C005C1772 /* RecipeViewModel.swift in Sources */,
 				E2885E912B533375005C1772 /* RecipesListView.swift in Sources */,
 				E200D6352B55DECF000D2BA7 /* LogoComponentView.swift in Sources */,
+				E2517D132B58111F0077B732 /* FavoritesViewModel.swift in Sources */,
 				E2885E8B2B53333F005C1772 /* IngredientViewModel.swift in Sources */,
 				E2885E842B5332E9005C1772 /* MealDBManager.swift in Sources */,
 				E2885E882B533318005C1772 /* Recipe.swift in Sources */,

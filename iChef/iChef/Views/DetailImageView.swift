@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct DetailImageView: View {
-    let recipeID: String
-    let detailImageURL: URL?
+    let recipe: Recipe
     @Environment(\.presentationMode) var presentation
     @State private var isFavorite: Bool = false
+    @ObservedObject private var viewModel = FavoritesViewModel()
 
     var body: some View {
         ZStack {
-            CardImageView(imageURL: detailImageURL)
+            CardImageView(imageURL: URL(string: recipe.strMealThumb))
                 .foregroundColor(.gray)
                 .frame(width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.width)
                 .overlay(
@@ -34,7 +34,9 @@ struct DetailImageView: View {
                             Spacer()
                             
                             Button(action: {
-                                FavoritesManager.shared.toggleFavorite(recipeID)
+                                FavoritesManager.shared.toggleFavorite(recipe)
+                                viewModel.updateFavorites()
+                                viewModel.sendFavoritesUpdate()
                                 isFavorite.toggle()
                             }, label: {
                                 Image(systemName: isFavorite ? "bookmark.fill" : "bookmark")
@@ -44,7 +46,7 @@ struct DetailImageView: View {
                                     .clipShape(Circle())
                             })
                             .onAppear {
-                                isFavorite = FavoritesManager.shared.isFavorite(recipeID)
+                                isFavorite = FavoritesManager.shared.isFavorite(recipe)
                             }
                         }
                         .padding(.horizontal, 16)

@@ -23,7 +23,9 @@ struct RecipeDetailView: View {
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                        DetailImageView(recipeID: recipeDetailViewModel.recipe?.idMeal ?? "", detailImageURL: URL(string: recipeDetailViewModel.recipe?.strMealThumb ?? ""))
+                        DetailImageView(recipe: Recipe(strMeal: recipeDetailViewModel.recipe?.strMeal ?? "",
+                                           strMealThumb: recipeDetailViewModel.recipe?.strMealThumb ?? "",
+                                           idMeal: recipeDetailViewModel.recipe?.idMeal ?? ""))
                         RecipeInformationView(recipeDetail: recipeDetailViewModel.recipe)
                     }
                     .cornerRadius(30)

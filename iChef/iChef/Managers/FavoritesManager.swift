@@ -15,20 +15,20 @@ class FavoritesManager {
 
     @AppStorage("favorites", store: UserDefaults(suiteName: "group.com.iChef")) private var favoritesData: Data = Data()
 
-    func getFavorites() -> Set<String> {
-        if let favorites = try? JSONDecoder().decode(Set<String>.self, from: favoritesData) {
+    func getFavorites() -> Set<Recipe> {
+        if let favorites = try? JSONDecoder().decode(Set<Recipe>.self, from: favoritesData) {
             return favorites
         }
-        return Set<String>()
+        return Set<Recipe>()
     }
 
-    func toggleFavorite(_ recipeId: String) {
+    func toggleFavorite(_ recipe: Recipe) {
         var favorites = getFavorites()
 
-        if favorites.contains(recipeId) {
-            favorites.remove(recipeId)
+        if favorites.contains(recipe) {
+            favorites.remove(recipe)
         } else {
-            favorites.insert(recipeId)
+            favorites.insert(recipe)
         }
 
         if let encodedData = try? JSONEncoder().encode(favorites) {
@@ -36,8 +36,8 @@ class FavoritesManager {
         }
     }
     
-    func isFavorite(_ recipeId: String) -> Bool {
+    func isFavorite(_ recipe: Recipe) -> Bool {
         let favorites = getFavorites()
-        return favorites.contains(recipeId)
+        return favorites.contains(recipe)
     }
 }
